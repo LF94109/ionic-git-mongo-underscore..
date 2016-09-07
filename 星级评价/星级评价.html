@@ -1,0 +1,42 @@
+<!Doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>星级评价</title>
+	</head>
+
+	<body>
+		<div id="container">
+			
+		</div>
+		<script type="text/javascript">
+			function Stars(count,aSize){
+				this.count = count || 5
+				this.size = aSize || 30
+			}
+			Stars.prototype.show = function(){
+				
+				var container = document.querySelector('#container')
+				
+				for (var i = 0;i <this.count;i++) {
+					var star = document.createElement('img')
+					
+					container.appendChild(star)
+					
+					star.style.width = this.size + 'px'
+					
+					star.src = 'img/star-yellow.png'
+					
+					star.style.margin = '10px'
+					
+					star.dataset.index = i + 1
+					
+					star.onclick = this.onStarClick.bind(this)
+				}
+			}
+		</script>
+
+	</body>
+
+</html>

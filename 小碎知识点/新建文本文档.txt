@@ -1,0 +1,40 @@
+  /*box-sizing:content-box;*/
+  /*box-sizing:border-box;*/
+ /*当前属性的默认值为：content-box;
+ 若当前属性值为border-box时，元素的宽度为设定好的宽度，不受
+ 边框以及内编剧宽度的影响，其边框与内边距在设定的宽度内填充；
+ 若为content-box时，元素的宽度受边框与内边距宽度的影响，则为
+ 边框+内边距宽度+设置宽度； */     
+
+
+
+
+            width: 300px;
+            /* 宽度 */
+            height: 300px;
+            /* 高度 */
+            background-image: url(wf.png);
+            /* 插入背景图片 */
+            background-size: 300px;
+            /* 背景图片大小 */
+            margin: 100px auto;
+            border-radius: 8px;
+            /* 边框圆角 */
+            box-shadow:0  2px  5px#eee;
+            /*animation-name:slideBg;*/
+            animation-duration:0.5s;
+            /*动画时间，完成一次动画所需的时间*/
+            background-repeat: no-repeat;
+            /*取消背景图片重复*/ 
+            /*背景图片自带：图片不断重复，自身图片尺寸*/
+
+
+
+                background-repeat: no-repeat;
+                /*background-repeat:repeat-x;*/
+                /*背景图片在x轴重复*/
+                /*background-repeat:repeat-y;*/
+                /*背景图片在y轴重复*/
+                /*background-repeat:repeat;*/
+                /*当前默认值是repeat*/
+                  

@@ -1,0 +1,27 @@
+1，使用custom自定义安装
+   安装位置：C:\Mongo
+
+2,在C:\Mongo 目录下创建
+	db文件夹 （存放数据库）
+	和 
+	log文件夹 （存放日志）
+
+3,在C:\Mongo 目录下创建mongod.cfg配置文件
+   在配置文件中键入：
+   systemLog:
+    	destination: file
+    	path: c:\mongo\log\mongod.log
+   storage:
+        dbPath: c:\mongo\db
+
+4，以管理员身份运行CMD，cd进入C:\Mongo\bin执行
+mongod.exe --config c:\mongo\mongod.cfg --install
+
+5,在任务管理器--服务--mongoDB 右键启动/停止服务
+
+在服务管理器中设置服务启动类型：手动/自动
+
+
+6，卸载服务：在c:\mongo\bin文件夹中 运行(CMD) mongod.exe --remove
+
+如果你需要进入MongoDB后台管理，你需要先打开mongodb装目录的下的bin目录，然后执行mongo.exe文件

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<link rel="stylesheet" type="text/css" href="Alert.css" />
+		<style type="text/css">
+			* {
+				box-sizing: border-box;
+			}
+			
+			form {
+				width: 500px;
+				margin: 0;
+				text-align: center;
+			}
+			
+			input {
+				display: inline-block;
+				margin: 15px 0;
+				width: 400px;
+				height: 40px;
+			}
+			
+			button {
+				width: 150px;
+				height: 40px;
+				display: inline-block;
+				margin-right: 160px;
+			}
+			
+			form #submit {
+				width: 150px;
+			}
+		</style>
+		<script src="Alert.js"></script>
+	</head>
+
+	<body>
+		<form action="/user" method="post">
+
+			<h2>注册界面</h2> 用户名&#x3000;：
+
+			<input type="text" name="userName" id="userName" placeholder="请输入用户名(4~10位由数字或字母)" required="required" autocomplete="off" autofocus="autofocus" pattern="[0-9A-Za-z]{4,10}" />
+			<br /> 密&#x3000;&#x3000;码：
+
+			<input type="password" name="psw" id="psw" placeholder="请输入密码" required="required" pattern="[0-9A-Za-z]{6,18}" /> 确认密码：
+
+			<input type="password" name="pwd" id="pwd" placeholder="请再次输入密码" required="required" pattern="[0-9A-Za-z]{6,18}" />
+
+			<button onclick="myclick()">Back</button>
+
+			<input type="submit" value="Login" id="submit" />
+
+			<script type="text/javascript">
+				var btn = document.querySelector('button')
+				btn.onclick = function myclick(e) {
+
+					e.preventDefault()
+
+					location.href = 'index.html'
+				}
+
+				document.forms[0].onsubmit = function(e) {
+
+					//阻止表单提交的默认事件
+					e.preventDefault()
+
+					var xhr = new XMLHttpRequest()
+
+					var myData = new FormData(this)
+
+					xhr.onreadystatechange = function() {
+
+						if(xhr.readyState == 4) {
+
+							if(xhr.status == 200) {
+
+								//alert(xhr.responseText)
+
+								var obj = JSON.parse(xhr.responseText)
+
+								new Alert(obj.result, function() {
+
+									location.href = 'index.html'
+								})
+							} else {
+
+								new Alert(' 密码不一致哦！，请稍后重试', function() {
+									//location.href = 'login.html'
+								})
+							}
+						}
+					}
+
+					xhr.open('POST', '/user')
+
+					xhr.send(myData)
+				}
+			</script>
+		</form>
+	</body>
+
+</html>

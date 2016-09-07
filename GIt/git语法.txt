@@ -1,0 +1,109 @@
+在git Bash上运行Linux命令
+
+命令：git   或是git  --version验证git是否安装成功
+
+命令：pwd 查看用户主目录
+
+命令：cd desktop 进入桌面目录
+
+命令：mkdir XXX  创建XXX文件夹
+
+命令：cd XXX 进入刚刚创建的XXX文件夹
+
+接下来开始初始化本地仓库(repository)
+命令：git init  初始化本地git仓库。初始化成功，会在XXX文件夹内产生一个隐藏文件，叫做.git
+
+命令：cd .git 进入.git 文件夹
+
+命令：ls  列出.git文件夹内所有文件
+
+命令：cd .. 回退到上一级目录即gitTest文件
+
+（命令：clear 清理命令行代码）
+
+
+命令：vim test.txt 创建文件
+
+此时会提示往文件中写入文本。
+
+按下键盘：i 不要按回车，代表进入插入模式。此时可以在界面上编辑文本的内容
+
+编辑结束，按下Esc键，结束编辑
+
+输入命令  :wq   代表结束编辑安全退出并保存
+
+此时会在XXX文件夹下，生成一个test.txt文本文件，内容就是刚刚编辑的内容。
+
+
+命令：rm test.txt  删除文件
+
+命令：git add test1.txt 是把工作区的文件添加到.git仓库的暂存区
+
+第一次使用git 需要配置用户信息
+
+git config --global user.name 用户名
+git config --global user.email 邮箱
+
+命令：git commit -m 描述信息   代表意思是把添加到暂存区的文件提交到git仓库。其中commit是提交的意思。-m代表可以给提交的版本添加描述信息，用来描述本次提交操作的详细信息
+
+命令：git log 显示操作日志，会返回每一次提交的版本信息
+
+例如：
+。。。。。。。。。。。。。。。。。。。。。。。。。。commit 09c183f5f2a8e53a4ff7d4d599f0323af5fdbff1
+Author: zhulinfeng <15738738767@163.com>
+
+
+
+命令：git status 用来获取工作区中文件的最新状态
+
+命令：git config core.autocrlf false 可以关闭每次执行add操作的时候的警告
+
+命令：git diff 是用来查看当前工作区的代码和仓库代码的不同
+
+使用命令：git add 111.txt 222.txt 333.txt  可以一次性提交多个文件，commit 的时候可以把add到暂存区的文件都提交到仓库
+
+命令：git add . 可以把工作区的所有文件都add到暂存区（注意：add后面有空格；   .  代表所有文件）
+
+命令：git commit -a -m 描述信息   可以一次性add并且提交
+
+命令：git checkout -- XXX.txt  可以撤销工作区最后一次修改的代码（注意 -- 后边有空格）
+
+命令：git reset HEAD XXX.txt代表把当前暂存区的版本回退
+
+命令：git reset --hard HEAD 代表把仓库内的版本回退到最后一次提交的版本，HEAD 后可以加上脱字符^，HEAD^代表回退到上一个版本；HEAD^^代表回退到上上一个版本，以此类推。。。如果回退多个版本可以使用HEAD~n  其中n代表之前的倒数第n个版本
+
+命令：git reset --hard 版本号   可以把添加到仓库的版本，强制回退到指定的版本
+
+命令：git reflog  可以列出之前所有操作的版本
+
+命令：git rm XXX.txt 代表移除仓库中的XXX.txt文件（注意rm并不能真正的移除，还需要提交commit一次）
+
+命令：git branch 用来查看当前git的所有分支，会在当前分支前边显示*号。默认只有一个master分支，作为主分支
+
+命令：git branch xxx 开启一个新的分支，名字叫做xxx
+
+命令：git checkout xxx 切换到xxx的分支
+
+命令：git checkout -b xxx  代表创建一个新的分支xxx同时切换到xxx分支
+
+命令：git merge xxx  代表从当前分支合并xxx分支的代码
+
+命令：git branch -d xxx 代表删除xxx分支
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>get请求</title>
+	</head>
+	<body>
+		
+		<!--创建一个form表单，提交数据的方式是http的get请求
+			其中：action就是要访问的url地址，药和服务器一致
+			method：就是请求方式
+		-->
+		<form action="/user" method="get">
+			<!--
+				get请求的url格式：
+				ip：端口号/资源路径？参数1=参数值&参数2=参数值
+				
+			-->
+			<!--input的属性  myName：是提交给服务器的一个参数    ，参数名叫做myName，输入框输入的值就是参数值-->
+			<input type="text" name="myName" id="name" placeholder="请输入用户名" /><br />
+			
+			<!--name属性 也是给服务器发送的一个参数，age是参数值-->
+			<input type="text" name="age" id="age"  placeholder="请输入年龄" /><br />
+			
+			
+			<input type="submit" value="提交"/>
+		</form>
+	</body>
+</html>

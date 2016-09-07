@@ -1,0 +1,95 @@
+一、标签元素的获取
+
+1.通过id属性获取标签元素
+document.getElementById(‘’)
+2.通过class属性获取标签元素
+document.getElementByClassName(‘’)
+3.通过元素的name属性获取标签元素
+document.getElementsByName(‘’)
+4.通过元素名称来获取元素标签
+document.getElementsByName(‘’)
+5.通过css选择器获取标签元素（）内为id名或class名
+document.querySelector(‘’)
+
+二、Dom节点
+A.在HTML文档中，所有的事物都是节点：
+  1.1HTML文档中的元素称为元素节点
+  1.2HTML文档中的属性称为属性节点
+  1.3HTML文档中的文本称为文本节点
+  1.4HTML文档中的注释称为注释节点
+  1.5HTML文档中的文档本身称为文档节点（根节点）
+  1.6另外其实在HTML文档中空格或是换行也是其中的一个节点，只不过一般被划分为文本节点
+B.myNodeList[n],是找到索引号为n的子节点。
+C.nodeName是获取某一个节点的节点名称
+  3.1元素节点的nodeName和元素名称一样（大写）
+  3.2属性节点的nodeName和属性名称一样
+  3.3文本节点的nodeName： #text
+  3.4注释节点的nodeName: #comment
+  3.5文档节点的nodeName: #document
+D.nodeType属性，是获取某一个节点的节点类型
+  4.1:元素节点的nodeType：1  对应    Node.ELEMENT.NODE;
+  4.2:属性节点的nodeType：2  对应    Node.ATTRIBUTE.NODE;
+  4.3:文本节点的nodeType：3  对应    Node.TEXT.NODE;
+  4.4:注释节点的nodeType：8  对应    Node.COMMENT.NODE;
+  4.5:文档节点的nodeType：9  对应    Node.DOCUMENT.NODE		E.5.nodeValue属性，用来获取节点的值,一般用于文本节点
+  5.1textContent是nodeValue的替代属性，他可以获取本节点和本节点下的子节点的内容
+元素的节点
+三、1.某一个节点元素的上一个/下一个节点，但是有可能得到的是注释或是空格
+previous/上一个
+next/下一个
+2.第一个或是最后一个节点
+.firstChild
+.lastChild
+3.通过Js往文档中存入新的标签元素
+4.查询构建一个标签元素
+5.替换，用前者替换后者
+.replaceChild(xx,xx);
+
+四、文本节点
+1.appendData():往指定的文件后面追加文本，（）内是追加的内容
+2.replaecData()：替换文本节点的某一部分的内容，（）内有三个值，第一个值是替换的起点（从0开始），第二个值是替换的终点，第三个值是替换的内容、
+
+3.inserData（）：用来在指定的文本位置插入文本，（）内有两个值，第一个值：插入的位置（从0开始）第二个值：插入的内容
+4.deleteData（）：用来删除某一部分的文本，（）内有两个值，第一个值：删除的起点（从0开始）；第二个值是删除的长度
+5.substringData（）：用来获取某一部分的文本，（）有两个值，第一个值是起点；第二个值是长度
+6.remove（）删除某一个节点，（）内没有值；
+五、属性节点
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

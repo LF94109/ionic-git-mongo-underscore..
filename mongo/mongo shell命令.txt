@@ -1,0 +1,67 @@
+打开mongodb装目录的下的bin目录，然后执行mongo.exe文件
+
+之后会自动连接到本地的MongoDB服务器，输入命令可以操作MongoDB服务器
+
+db:DataBase 即数据库
+
+show dbs  列出所有的数据库（只有数据库中有数据才能被列出）
+
+db    显示当前数据库
+
+show  collections  列出数据库中的所有集合
+
+use xxx  切换/创建数据库
+
+db.dropDatabase()删除当前使用数据库
+
+db.cloneDatabase(“127.0.0.1”) 将指定机器上的数据库的数据克隆到当前数据库
+
+db.copyDatabase("mydb", "temp", "127.0.0.1");将本机的mydb的数据复制到temp数据库中
+
+db.collection.insert({})创建集合并且插入数据。其中collection是集合的名称。集合用来存放同类型的数据。
+
+db.collection.find()列出指定集合中的数据
+
+db.collection.drop() 删除指定的集合
+
+db.collection.find().sort({属性:1/-1})按照某一个属性对集合中的数据进行排序。1/-1代表：正序/倒序
+
+db.collection.find().limit(n)显示前n条数据
+
+db.collection.find().skip(n)跳过前n条数据
+
+
+db.collection.find({属性:value})查找属性值为value的数据
+
+db.collection.find({属性:{运算符:value}})查找属性符合某一个条件的数据。
+
+运算符：
+$lt    less than         <  小于
+$lte   less than equal   <= 小于或等于
+$gt    greater than      >   大于
+$gte   greater than equal >=  大于或是等于
+$ne    not equal          !=  不等于 
+
+使用多个运算符：
+：
+db.collection.find({属性:{运算符:value,运算符:value}})  同时满足  表达式1 && 表达式2
+
+
+db.collection.find(
+{$or:[{属性:value},{属性:value},{属性:value}]}) 满足任何一个表达式条件
+
+
+//更新数据
+db.collection.update(
+{筛选条件},
+{$set:{属性:value}},{multi:true/false,upsert:true/false}
+)
+
+其中：multi:true/false 是否更新多条数据，默认false
+upsert：如果找不到匹配数据，是否将该数据插入数据库
+
+//删除数据
+db.collection.remove({数据筛选条件}，true/false)
+其中：true/false 默认是false，代表是否删除所有符合的数据。true只删除一条(一般是第一条)
+
+

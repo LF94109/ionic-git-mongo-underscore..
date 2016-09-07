@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>登陆界面</title>
+		<style type="text/css">
+		html,body{
+			height: 100%;
+		}
+		body{
+			margin: 0;
+			background: linear-gradient(#348ccb,#a9d8f6);
+		}
+			section {
+				position: relative;
+				left:150px;
+				top: 150px;
+				width: 450px;
+				height: 450px;
+			}
+			
+			section ul {
+				list-style: none;
+			}
+			
+			section #imgs li {
+				position: absolute;
+				opacity: 0;
+			}
+			section #imgs>li.current{
+				opacity: 1;
+			}
+			section #indicators{
+				position: absolute;
+				z-index: 100;
+				bottom: 20px;
+				left:300px;
+			}
+			section #indicators>li{
+				
+				float: left;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background-color: white;
+				margin: 5px;
+			}
+			section #indicators>li.current{
+				background-color: black;
+			}
+		</style>
+		<script src="index.js"></script>
+	</head>
+
+	<body>
+
+		<section>
+			<ul id="imgs">
+				<li class="current"><img src="img/1.jpg" /></li>
+				<li><img src="img/2.jpg" /></li>
+				<li><img src="img/3.jpg" /></li>
+				<li><img src="img/4.jpg" /></li>
+			</ul>
+			<ul id="indicators">
+				<li class="current"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</section>
+	</body>
+
+</html>

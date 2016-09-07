@@ -1,0 +1,19 @@
+{
+  "name": "zhulinfeng",
+  "version": "1.0.0",
+  "description": "denglu",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "denglu",
+    "jiemian"
+  ],
+  "author": "zhulinfeng",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "multer": "^1.1.0"
+  }
+}

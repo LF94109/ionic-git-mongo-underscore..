@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>登录界面</title>
+		<style type="text/css">
+			* {
+				box-sizing: border-box;
+			}
+			
+			main {
+				width: 500px;
+				margin: 0 auto;
+				text-align: center;
+			}
+			
+			input {
+				display: inline-block;
+				margin: 15px 0;
+				width: 400px;
+				height: 40px;
+				border: none;
+				border-bottom: solid 1px silver;
+			}
+			
+			main #submit {
+				width: 450px;
+				display: inline-block;
+				/*margin-right: 160px;*/
+				border: none;
+			}
+			
+			button {
+				width: 150px;
+				height: 40px;
+				margin: 10px 150px 10px 0;
+				border: none;
+				display: inline-block;
+			}
+			#btn{
+				margin:0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<main>
+			<h1>登录界面</h1>
+			用户名：<input type="text" name="userName" id="userName" placeholder="请输入用户名" required="required" autocomplete="off" autofocus="autofocus" pattern="[0-9A-Za-z]{4,10}"/>
+			<br />
+
+			密&#x3000;码：<input type="password" name="psw" id="psw" placeholder="请输入密码" required="required" pattern="[0-9A-Za-z]{6,18}" />
+
+			<input type="submit" value="登录" id="submit" onclick="success()"/>
+			
+			<button>忘记密码</button>
+
+			<button onclick="location.href='login.html'" id="btn">注册</button>
+		</main>
+		<script src="success.js"></script>
+	</body>
+
+</html>
